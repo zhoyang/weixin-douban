@@ -1,0 +1,46 @@
+<view class="container">
+  <image wx:if="{{ item.images.large }}" class="background" src="{{ item.images.large }}" mode="aspectFill"/>
+  <block wx:if="{{ item.title }}">
+    <view class="meta">
+      <image class="poster" src="{{ item.images.large }}" mode="aspectFit"/>
+      <text class="title">{{ item.title }}({{ item.year }})</text>
+      <text class="info">时长：{{ item.durations }}</text>
+      <text class="info">评分：{{ item.rating.average }}</text>
+      <text class="info">导演：<block wx:for="{{ item.directors }}" wx:key="id"> {{ item.name }} </block></text>
+      <text class="info">主演：<block wx:for="{{ item.casts }}" wx:key="id"> {{ item.name }} </block></text>
+     
+    </view>
+    <view class="summary"  style="margin-top:0px;">
+      <text class="label">所属频道</text>
+          <navigator  url="" wx:for="{{item.genres}}" wx:key="id"  class="li">
+            <text>{{item}}<text style="color:green;margin-left:3px;">></text></text>
+          </navigator>
+    </view>
+    <view class="summary">
+      <text class="label">剧情简介：</text>
+      <text class="content">{{ item.summary }}</text>
+    </view>
+     <view class="summary">
+      <text class="label" style="margin-bottom:0;">短评：</text>
+      <block wx:for="{{item.popular_comments}}" wx:key="popular">
+        <view class="liil">
+          <view class="desc">
+            <image src="{{item.author.avatar}}"></image>
+            <view class="user-info">
+              <text class="user-name">{{item.author.name}}</text>
+              <text class="date">{{item.created_at}}</text>
+            </view>
+          </view>
+          <text class="user-pl">
+               {{item.content}}
+          </text>
+          <view class="btn-info">
+            <image src="https://img3.doubanio.com/f/talion/7a0756b3b6e67b59ea88653bc0cfa14f61ff219d/pics/card/ic_like_gray.svg"></image>
+            <text class="btn-num">{{item.useful_count}}</text>
+          </view>
+        </view>
+      </block>
+    </view>
+  </block>
+</view>
+

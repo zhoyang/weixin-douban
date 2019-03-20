@@ -1,0 +1,98 @@
+<swiper indicator-dots="{{indicatorDots}}"
+  autoplay="{{autoplay}}"
+  interval="{{interval}}"
+  duration="{{duration}}"
+  circular="{{circular}}"
+  style="height:546rpx;"
+  indicator-color="rgba(255, 255, 255, .8)"
+  indicator-active-color="rgba(255, 0, 0, .8)"
+  >
+  <view class="slide">
+    <swiper-item wx:for="{{in_theaters}}" wx:key="key">
+      <image src="{{item.images.medium}}" class="slide-image" style="height:100%;width:100%;"  mode="aspectFill"/>
+    </swiper-item>
+   </view>
+</swiper>
+
+<view class='board' >
+    <view class="board-item" >
+    <navigator url="../list/list?key=in_theaters">
+        <view class="title">
+          <text>正在上映的电影-北京</text>
+          <image src="../../image/arrowright.png" mode="aspectFill"/>
+        </view>
+    </navigator>
+      <scroll-view class="content" scroll-x="true">
+        <view class="inner" >
+          <navigator  url="../item/item?id={{item.id}}" wx:for="{{in_theaters}}" wx:key="id">
+            <view class="movie-item">
+              <image src="{{item.images.small}}" mode="aspectFill"/>
+              <text>{{item.title}}</text>
+            </view>
+          </navigator>
+        </view>
+      </scroll-view>
+  </view>
+</view>
+
+<view class='board' >
+    <view class="board-item" >
+    <navigator url="../list/list?key=coming_soon">
+        <view class="title">
+          <text>即将上映的电影</text>
+          <image src="../../image/arrowright.png" mode="aspectFill"/>
+        </view>
+    </navigator>
+      <scroll-view class="content" scroll-x="true">
+        <view class="inner" >
+          <navigator  url="../item/item?id={{item.id}}" wx:for="{{coming_soon}}" wx:key="id">
+            <view class="movie-item">
+              <image src="{{item.images.small}}" mode="aspectFill"/>
+              <text>{{item.title}}</text>
+            </view>
+          </navigator>
+        </view>
+      </scroll-view>
+  </view>
+</view>
+<view class='board' >
+    <view class="board-item" >
+    <navigator url="../list/list?key=new_movies">
+        <view class="title">
+          <text>豆瓣电影新片榜</text>
+          <image src="../../image/arrowright.png" mode="aspectFill"/>
+        </view>
+    </navigator>
+      <scroll-view class="content" scroll-x="true">
+        <view class="inner" >
+          <navigator url="../item/item?id={{item.id}}" wx:for="{{new_movies}}" wx:key="id">
+            <view class="movie-item">
+              <image src="{{item.images.small}}" mode="aspectFill"/>
+              <text>{{item.title}}</text>
+            </view>
+          </navigator>
+        </view>
+      </scroll-view>
+  </view>
+</view>
+
+<view class='board' >
+    <view class="board-item" >
+    <navigator url="../list/list?key=top250">
+        <view class="title">
+          <text>豆瓣电影Top250</text>
+          <image src="../../image/arrowright.png" mode="aspectFill"/>
+        </view>
+    </navigator>
+      <scroll-view class="content" scroll-x="true">
+        <view class="inner" >
+          <navigator  url="../item/item?id={{item.id}}" wx:for="{{top250}}" wx:key="id">
+            <view class="movie-item">
+              <image src="{{item.images.small}}" mode="aspectFill"/>
+              <text>{{item.title}}</text>
+            </view>
+          </navigator>
+        </view>
+      </scroll-view>
+  </view>
+</view>

@@ -1,0 +1,12 @@
+<template name="movieList">
+  <view class="list">
+    <navigator url="../item/item?id={{id}}" style="width:100%">
+      <view class="img" >
+        <image src="{{images.small}}" mode="aspectFit "></image>
+      </view>
+      <view class="info">
+        <text class="h3">{{title}}</text>
+      </view>
+    </navigator>
+  </view>
+</template>

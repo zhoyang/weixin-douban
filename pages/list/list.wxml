@@ -1,0 +1,11 @@
+<import src="../common/movie-list.wxml"/>
+<view class="h2">{{title}}</view>
+
+  <scroll-view scroll-top="{{scrollTop}}" scroll-y="true">
+  <block wx:for="{{list}}" wx:key="key" > 
+    <template is="movieList" data="{{...item}}"></template> 
+  </block>
+  <view class="weui-loadmore weui-loadmore_line" wx:if="{{isShow}}">
+      <view class="weui-loadmore__tips weui-loadmore__tips_in-line">暂无数据</view>
+  </view>
+  </scroll-view>

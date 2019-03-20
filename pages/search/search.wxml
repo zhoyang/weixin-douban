@@ -1,0 +1,9 @@
+<button class="weui-btn"  bindtap="call">call</button>
+<button class="weui-btn" bindtap="scanCode">扫码</button>
+<button class="weui-btn" bindtap="getSystemInfo">系统</button>
+<button class="weui-btn" open-type="getUserInfo" bindgetuserinfo="onGotUserInfo" wx:if="{{!hasUserInfo && canIUse}}">用户</button>
+<image src="{{userInfo.avatarUrl}}" style="width:126rpx;height:126rpx;" ></image>
+<view hover-class="ui-share-hover">
+  <icon type="warn" size="93" color="#FFBE00" ></icon>
+</view>
+<button class="weui-btn" bindtap="search">search</button>
